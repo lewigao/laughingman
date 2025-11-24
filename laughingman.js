@@ -1,4 +1,4 @@
-var SQUARE_COUNT = 0;
+var SQUARE_COUNT = 3;
 var SPEED = 5;
 var TIMER_SPEED = 1;
 
@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
         var dy = SPEED * (Math.random() * 2 - 1);
 
         setInterval(() => {
-            let currentLeft = parseInt(element.style.left) || 225;
-            let currentTop = parseInt(element.style.top) || 175;
+            // changed parseInt to parseFloat: fixes rubberbanding issue
+            let currentLeft = parseFloat(element.style.left) || 225;
+            let currentTop = parseFloat(element.style.top) || 175;
             
             if (currentTop >= 350 || currentTop <= 0){
                 dy = -dy;
