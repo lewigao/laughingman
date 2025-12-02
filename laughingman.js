@@ -10,13 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     squareElement.addEventListener('click', () => {
         alert("OMG you CAUGHT me");
     });
-    
-    // 6. mouseover #square color change 
-    let coloredSquare = document.querySelector('#square');
-    coloredSquare.addEventListener('mouseover', e => {
-        square.style.backgroundColor = getRandomColor();
-    });
-
     let box = document.querySelector('#box');
 
     // 2. square creation loop
@@ -27,19 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
         square.src = 'laughing_man.jpg';
         square.alt = 'Catch the laughing man!';
         square.className = 'square';
+        // 5. mouseover orochimaru/mouseout reversion
         square.addEventListener('mouseover', e => {
             square.src = 'Orochimaru.jpg';
         });
-        // 5. mouseover orochimaru/mouseout reversion
         square.addEventListener('mouseout', e => {
             square.src = 'laughing_man.jpg';
         });
         //adds it to the screen
         box.appendChild(square);
     }
-
-
-
 
     let allSquares = box.children;
     // or let allSquares = box.querySelector('box');
@@ -57,18 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentTop >= 350 || currentTop <= 0) {
                 dy = -dy;
                 element.style.borderColor = getRandomColor();
+                element.style.backgroundColor = getRandomColor();
             }
             if (currentLeft >= 450 || currentLeft <= 0) {
                 dx = -dx;
                 element.style.borderColor = getRandomColor();
-
+                element.style.backgroundColor = getRandomColor();
             }
             element.style.left = currentLeft + dx + "px";
             element.style.top = currentTop + dy + "px";
         }, TIMER_SPEED);
     });
 
-
+    // 6. mouseover #square color change 
+    let coloredSquare = document.querySelector('#square');
+    coloredSquare.addEventListener('mouseover', e => {
+        square.style.backgroundColor = getRandomColor();
+    });
 
 });
 
