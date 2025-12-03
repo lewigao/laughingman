@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //square creation
         let square = document.createElement('img');
         // 3. laughing man image
-        square.src = 'laughingman.jpg';
+        square.src = 'laughing_man.jpg';
         square.alt = 'Catch the laughing man!';
         square.className = 'square';
         // 5. mouseover orochimaru/mouseout reversion
